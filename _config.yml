@@ -24,12 +24,12 @@ email: ljhone@126.com
 # baseurl: "" # the subpath of your site, e.g. /blog
 # url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
-# github_username:  jekyll
+github_username:  ljhone
 
 # Build settings
 theme: minima
 plugins:
-  - jekyll-feed
+ - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default.

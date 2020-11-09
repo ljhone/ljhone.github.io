@@ -1,7 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2020-11-08T20:16:25-06:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">做实务虚笔记</title><entry><title type="html">docker编译jekyll网页</title><link href="http://0.0.0.0:4000/work/2020/11/08/01.html" rel="alternate" type="text/html" title="docker编译jekyll网页" /><published>2020-11-08T00:00:00-06:00</published><updated>2020-11-08T00:00:00-06:00</updated><id>http://0.0.0.0:4000/work/2020/11/08/01</id><content type="html" xml:base="http://0.0.0.0:4000/work/2020/11/08/01.html">&lt;h2 id=&quot;第一步&quot;&gt;第一步&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2020-11-09T05:32:14-06:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">做实务虚笔记</title><entry><title type="html">Docker编译jekyll网页</title><link href="http://0.0.0.0:4000/work/2020/11/08/01.html" rel="alternate" type="text/html" title="Docker编译jekyll网页" /><published>2020-11-08T00:00:00-06:00</published><updated>2020-11-08T00:00:00-06:00</updated><id>http://0.0.0.0:4000/work/2020/11/08/01</id><content type="html" xml:base="http://0.0.0.0:4000/work/2020/11/08/01.html">&lt;h3 id=&quot;第一步&quot;&gt;第一步&lt;/h3&gt;
 
-&lt;p&gt;teeth&lt;/p&gt;
+&lt;p&gt;下载jekyll的minima主题的代码&lt;/p&gt;
 
-&lt;h2 id=&quot;第二步&quot;&gt;第二步&lt;/h2&gt;
+&lt;h3 id=&quot;第二步&quot;&gt;第二步&lt;/h3&gt;
 
-&lt;p&gt;tetet&lt;/p&gt;</content><author><name></name></author><category term="work" /><summary type="html">第一步</summary></entry><entry><title type="html">更新数据</title><link href="http://0.0.0.0:4000/life/2020/11/01/01.html" rel="alternate" type="text/html" title="更新数据" /><published>2020-11-01T00:00:00-05:00</published><updated>2020-11-01T00:00:00-05:00</updated><id>http://0.0.0.0:4000/life/2020/11/01/01</id><content type="html" xml:base="http://0.0.0.0:4000/life/2020/11/01/01.html">&lt;p&gt;hello2&lt;/p&gt;</content><author><name></name></author><category term="life" /><summary type="html">hello2</summary></entry></feed>
+&lt;p&gt;编辑docker-compose的配置文件&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;jekyll&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll/jekyll:4.0&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll serve&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;8080:4000&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;8443:35729&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./:/srv/jekyl&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;通过运行&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-compose up&lt;/code&gt;启动验证jekyll服务，该服务支持热更新。&lt;/p&gt;
+
+&lt;h3 id=&quot;第三步&quot;&gt;第三步&lt;/h3&gt;
+
+&lt;p&gt;把代码github上，在外网就可以访问得到了&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ljh.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="work" /><summary type="html">第一步</summary></entry><entry><title type="html">更新数据</title><link href="http://0.0.0.0:4000/life/2020/11/01/01.html" rel="alternate" type="text/html" title="更新数据" /><published>2020-11-01T00:00:00-05:00</published><updated>2020-11-01T00:00:00-05:00</updated><id>http://0.0.0.0:4000/life/2020/11/01/01</id><content type="html" xml:base="http://0.0.0.0:4000/life/2020/11/01/01.html">&lt;p&gt;hello2&lt;/p&gt;</content><author><name></name></author><category term="life" /><summary type="html">hello2</summary></entry></feed>
