@@ -27,7 +27,7 @@ email: ljhone@126.com
 # github_username:  jekyll
 
 # Build settings
-theme: jekyll-theme-time-machine
+theme: minima
 plugins:
   - jekyll-feed
 
