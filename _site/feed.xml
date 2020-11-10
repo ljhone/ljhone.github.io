@@ -1,4 +1,118 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2020-11-09T21:20:32-06:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">做实务虚笔记</title><subtitle></subtitle><entry><title type="html">Docker编译jekyll博客网页</title><link href="http://0.0.0.0:4000/work/2020/11/08/Docker_for_jekyll_blog.html" rel="alternate" type="text/html" title="Docker编译jekyll博客网页" /><published>2020-11-08T00:00:00-06:00</published><updated>2020-11-08T00:00:00-06:00</updated><id>http://0.0.0.0:4000/work/2020/11/08/Docker_for_jekyll_blog</id><content type="html" xml:base="http://0.0.0.0:4000/work/2020/11/08/Docker_for_jekyll_blog.html">&lt;h3 id=&quot;主题流程摘要&quot;&gt;主题流程摘要&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2020-11-10T03:16:49-06:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">做实务虚笔记</title><subtitle></subtitle><entry><title type="html">多人视频通讯架构</title><link href="http://0.0.0.0:4000/work/2020/11/09/webrtc_framework.html" rel="alternate" type="text/html" title="多人视频通讯架构" /><published>2020-11-09T00:00:00-06:00</published><updated>2020-11-09T00:00:00-06:00</updated><id>http://0.0.0.0:4000/work/2020/11/09/webrtc_framework</id><content type="html" xml:base="http://0.0.0.0:4000/work/2020/11/09/webrtc_framework.html">&lt;ol&gt;
+  &lt;li&gt;Mesh架构&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;每个端都与其它端互连。以上图最左侧为例，5个浏览器，二二建立p2p连接，每个浏览器与其它4个建立连接，总共需要10个连接。如果每条连接占用1m带宽，则每个端上行需要4m，下行带宽也要4m，总共带宽消耗20m。而且除了带宽问题，每个浏览器上还要有音视频“编码/解码”，cpu使用率也是问题，一般这种架构只能支持4-6人左右，不过优点也很明显，没有中心节点，实现很简单。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;MCU (MultiPoint Control Unit)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;这是一种传统的中心化架构(上图中间部分)，每个浏览器仅与中心的MCU服务器连接，MCU服务器负责所有的视频编码、转码、解码、混合等复杂逻辑，每个浏览器只要1个连接，整个应用仅消耗5个连接，带宽占用(包括上行、下行）共10m，浏览器端的压力要小很多，可以支持更多的人同时音视频通讯，比较适合多人视频会议。但是MCU服务器的压力较大，需要较高的配置。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;SFU(Selective Forwarding Unit)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;中心节点服务器，但是中心节点只负责转发，不做太重的处理，所以服务器的压力会低很多，配置也不象MUC要求那么高。但是每个端需要建立一个连接用于上传自己的视频，同时还要有N-1个连接用于下载其它参与方的视频信息。所以总连接数为5*5，消耗的带宽也是最大的，如果每个连接1M带宽，总共需要25M带宽，它的典型场景是1对N的视频互动。&lt;/p&gt;</content><author><name></name></author><category term="work" /><summary type="html">Mesh架构</summary></entry><entry><title type="html">后台开发知识地图</title><link href="http://0.0.0.0:4000/work/2020/11/09/interview_mindmap.html" rel="alternate" type="text/html" title="后台开发知识地图" /><published>2020-11-09T00:00:00-06:00</published><updated>2020-11-09T00:00:00-06:00</updated><id>http://0.0.0.0:4000/work/2020/11/09/interview_mindmap</id><content type="html" xml:base="http://0.0.0.0:4000/work/2020/11/09/interview_mindmap.html">&lt;div class=&quot;mermaid&quot;&gt;
+graph LR;
+    A[面试]--&amp;gt;B[语言技能];
+    A--&amp;gt;C[算法和数据结构]; 
+    A--&amp;gt;E[TCP/IP]
+    A--&amp;gt;F[WEBRTC]
+    B--&amp;gt;D[C++]
+    D--&amp;gt;D1[C语言]
+    D--&amp;gt;D2[类]
+    D--&amp;gt;D3[STL]
+    D--&amp;gt;D4[模版]
+    C--&amp;gt;C1[哈希]
+    C--&amp;gt;C2[优先级队列]
+    C--&amp;gt;C3[字符串处理]
+    C--&amp;gt;C4[DFS]
+    E--&amp;gt;E1[TCP]
+    E--&amp;gt;E2[UDP]
+    F--&amp;gt;F1[连接过程梳理]
+    F--&amp;gt;F2[STUN与TURN]
+&lt;/div&gt;
+
+&lt;script src=&quot;https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;mermaid.initialize({startOnLoad:true});&lt;/script&gt;</content><author><name></name></author><category term="work" /><summary type="html">graph LR; A[面试]--&amp;gt;B[语言技能]; A--&amp;gt;C[算法和数据结构]; A--&amp;gt;E[TCP/IP] A--&amp;gt;F[WEBRTC] B--&amp;gt;D[C++] D--&amp;gt;D1[C语言] D--&amp;gt;D2[类] D--&amp;gt;D3[STL] D--&amp;gt;D4[模版] C--&amp;gt;C1[哈希] C--&amp;gt;C2[优先级队列] C--&amp;gt;C3[字符串处理] C--&amp;gt;C4[DFS] E--&amp;gt;E1[TCP] E--&amp;gt;E2[UDP] F--&amp;gt;F1[连接过程梳理] F--&amp;gt;F2[STUN与TURN]</summary></entry><entry><title type="html">面试常见问题</title><link href="http://0.0.0.0:4000/work/2020/11/09/common_question.html" rel="alternate" type="text/html" title="面试常见问题" /><published>2020-11-09T00:00:00-06:00</published><updated>2020-11-09T00:00:00-06:00</updated><id>http://0.0.0.0:4000/work/2020/11/09/common_question</id><content type="html" xml:base="http://0.0.0.0:4000/work/2020/11/09/common_question.html">&lt;h3 id=&quot;1--写出int-bool-float-指针变量与-零值比较的if-语句&quot;&gt;1  写出int 、bool、 float 、指针变量与 “零值”比较的if 语句&lt;/h3&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//int与零值比较 &lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ 
+&lt;span class=&quot;c1&quot;&gt;//bool与零值比较 &lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//   表示flag为真 &lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//   表示flag为假 &lt;/span&gt;
+ 
+&lt;span class=&quot;c1&quot;&gt;//float与零值比较 &lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EPSINON&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.00001&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EPSINON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EPSINON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//其中EPSINON是允许的误差（即精度）。&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//指针变量与零值比较 &lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;2-ｃ-语言的-malloc-和-ｃ-中的-new-有什么区别&quot;&gt;2 Ｃ 语言的 malloc 和 Ｃ＋＋ 中的 new 有什么区别&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;new 、delete 是操作符，可以重载，只能在C++ 中使用。&lt;/li&gt;
+  &lt;li&gt;malloc、free 是函数，可以覆盖，C、C++ 中都可以使用。&lt;/li&gt;
+  &lt;li&gt;new 可以调用对象的构造函数，对应的delete 调用相应的析构函数。&lt;/li&gt;
+  &lt;li&gt;malloc 仅仅分配内存，free 仅仅回收内存，并不执行构造和析构函数&lt;/li&gt;
+  &lt;li&gt;new 、delete 返回的是某种数据类型指针，malloc、free 返回的是void 指针。&lt;br /&gt;
+注意：malloc 申请的内存空间要用free 释放，而new 申请的内存空间要用delete 释放，不要混用。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3--简述cc程序编译的内存分配情况&quot;&gt;3  简述C、C++程序编译的内存分配情况&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;从静态存储区域分配&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;内存在程序编译时就已经分配好，这块内存在程序的整个运行期间都存在。速度快、不容易出错， 因为有系统会善后。例如全局变量，static 变量，常量字符串等。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;在栈上分配&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;执行函数时，函数内局部变量的存储单元都在栈上创建，函数执行结束时这些存储单元自动被释 放。栈内存分配运算内置于处理器的指令集中，效率很高，但是分配的内存容量有限。大小为2M。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;从堆上分配&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;即动态内存分配。程序在运行的时候用 malloc 或new 申请任意大小的内存，程序员自己负责在何 时用free 或delete 释放内存。动态内存的生存期由程序员决定，使用非常灵活。如果在堆上分配了空间，就有责任回收它，否则运行的程序会出现内存泄漏，另外频繁地分配和释放不同大小的堆空间将会产生 堆内碎块。&lt;/p&gt;
+
+&lt;h3 id=&quot;4--对c中的smart-pointer四个智能指针shared_ptrunique_ptrweak_ptrauto_ptr的理解&quot;&gt;4  对c++中的smart pointer四个智能指针：shared_ptr,unique_ptr,weak_ptr,auto_ptr的理解&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;unique_ptr&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;unique_ptr实现独占式拥有或严格拥有概念，保证同一时间内只有一个智能指针可以指向该对象。它对于避免资源泄露(例如“以new创建对象后因为发生异常而忘记调用delete”)特别有用。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;shared_ptr&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;shared_ptr实现共享式拥有概念。多个智能指针可以指向相同对象，该对象和其相关资源会在“最后一个引用被销毁”时候释放。从名字share就可以看出了资源可以被多个指针共享，它使用计数机制来表明资源被几个指针共享。可以通过成员函数use_count()来查看资源的所有者个数。除了可以通过new来构造，还可以通过传入auto_ptr, unique_ptr,weak_ptr来构造。当我们调用release()时，当前指针会释放资源所有权，计数减一。当计数等于0时，资源会被释放。&lt;/p&gt;
+
+&lt;p&gt;成员函数：&lt;/p&gt;
+
+&lt;p&gt;use_count 返回引用计数的个数&lt;br /&gt;
+unique 返回是否是独占所有权( use_count 为 1)&lt;br /&gt;
+swap 交换两个 shared_ptr 对象(即交换所拥有的对象)&lt;br /&gt;
+reset 放弃内部对象的所有权或拥有对象的变更, 会引起原有对象的引用计数的减少&lt;br /&gt;
+get 返回内部对象(指针), 由于已经重载了()方法, 因此和直接使用对象是一样的.如 shared_ptrsp(new int(1)); sp 与 sp.get()是等价的&lt;/p&gt;
+
+&lt;h3 id=&quot;5---webrtc-p2p连接过程&quot;&gt;5   webrtc p2p连接过程&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/webrtc_connection.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;6&quot;&gt;6&lt;/h3&gt;</content><author><name></name></author><category term="work" /><summary type="html">1 写出int 、bool、 float 、指针变量与 “零值”比较的if 语句</summary></entry><entry><title type="html">Docker编译jekyll博客网页</title><link href="http://0.0.0.0:4000/work/2020/11/08/Docker_for_jekyll_blog.html" rel="alternate" type="text/html" title="Docker编译jekyll博客网页" /><published>2020-11-08T00:00:00-06:00</published><updated>2020-11-08T00:00:00-06:00</updated><id>http://0.0.0.0:4000/work/2020/11/08/Docker_for_jekyll_blog</id><content type="html" xml:base="http://0.0.0.0:4000/work/2020/11/08/Docker_for_jekyll_blog.html">&lt;h3 id=&quot;主题流程摘要&quot;&gt;主题流程摘要&lt;/h3&gt;
 &lt;div class=&quot;mermaid&quot;&gt;
 graph TD;
     A[下载主题]--&amp;gt;B[镜像配置];
@@ -56,4 +170,4 @@ graph TD;
 
 &lt;script src=&quot;https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js&quot;&gt;&lt;/script&gt;
 
-&lt;script&gt;mermaid.initialize({startOnLoad:true});&lt;/script&gt;</content><author><name></name></author><category term="work" /><summary type="html">主题流程摘要 graph TD; A[下载主题]--&amp;gt;B[镜像配置]; B[镜像配置]--&amp;gt;C[启动服务];</summary></entry><entry><title type="html">更新数据</title><link href="http://0.0.0.0:4000/life/2020/11/01/01.html" rel="alternate" type="text/html" title="更新数据" /><published>2020-11-01T00:00:00-05:00</published><updated>2020-11-01T00:00:00-05:00</updated><id>http://0.0.0.0:4000/life/2020/11/01/01</id><content type="html" xml:base="http://0.0.0.0:4000/life/2020/11/01/01.html">&lt;p&gt;hello2&lt;/p&gt;</content><author><name></name></author><category term="life" /><summary type="html">hello2</summary></entry></feed>
+&lt;script&gt;mermaid.initialize({startOnLoad:true});&lt;/script&gt;</content><author><name></name></author><category term="work" /><summary type="html">主题流程摘要 graph TD; A[下载主题]--&amp;gt;B[镜像配置]; B[镜像配置]--&amp;gt;C[启动服务];</summary></entry></feed>
