@@ -5,6 +5,3 @@
 layout: home
 ---
 我是我的印象的一部分，而我的全部印象才是我。
-
-<script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
