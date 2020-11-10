@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2020-11-09T05:32:14-06:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">做实务虚笔记</title><entry><title type="html">Docker编译jekyll网页</title><link href="http://0.0.0.0:4000/work/2020/11/08/01.html" rel="alternate" type="text/html" title="Docker编译jekyll网页" /><published>2020-11-08T00:00:00-06:00</published><updated>2020-11-08T00:00:00-06:00</updated><id>http://0.0.0.0:4000/work/2020/11/08/01</id><content type="html" xml:base="http://0.0.0.0:4000/work/2020/11/08/01.html">&lt;h3 id=&quot;第一步&quot;&gt;第一步&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2020-11-09T20:37:53-06:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">做实务虚笔记</title><subtitle></subtitle><author><name>ljhone</name><email>ljhone@126.com</email></author><entry><title type="html">Docker编译jekyll博客网页</title><link href="http://0.0.0.0:4000/work/2020/11/08/Docker_for_jekyll_blog.html" rel="alternate" type="text/html" title="Docker编译jekyll博客网页" /><published>2020-11-08T00:00:00-06:00</published><updated>2020-11-08T00:00:00-06:00</updated><id>http://0.0.0.0:4000/work/2020/11/08/Docker_for_jekyll_blog</id><content type="html" xml:base="http://0.0.0.0:4000/work/2020/11/08/Docker_for_jekyll_blog.html">&lt;h3 id=&quot;主题流程摘要&quot;&gt;主题流程摘要&lt;/h3&gt;
+&lt;div class=&quot;mermaid&quot;&gt;
+graph TD;
+    A[下载主题]--&amp;gt;B[镜像配置];
+    B[镜像配置]--&amp;gt;C[启动服务];
+&lt;/div&gt;
+
+&lt;h3 id=&quot;第一步&quot;&gt;第一步&lt;/h3&gt;
 
 &lt;p&gt;下载jekyll的minima主题的代码&lt;/p&gt;
 
@@ -8,7 +15,9 @@
 
 &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;jekyll&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll/jekyll:4.0&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll serve&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;container_name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;stdin_open&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;entrypoint&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;sh&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;8080:4000&lt;/span&gt;
     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;8443:35729&lt;/span&gt;
@@ -20,6 +29,31 @@
 
 &lt;h3 id=&quot;第三步&quot;&gt;第三步&lt;/h3&gt;
 
-&lt;p&gt;把代码github上，在外网就可以访问得到了&lt;/p&gt;
+&lt;p&gt;把代码github上，在外网就可以访问得到了。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/ljh.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="work" /><summary type="html">第一步</summary></entry><entry><title type="html">更新数据</title><link href="http://0.0.0.0:4000/life/2020/11/01/01.html" rel="alternate" type="text/html" title="更新数据" /><published>2020-11-01T00:00:00-05:00</published><updated>2020-11-01T00:00:00-05:00</updated><id>http://0.0.0.0:4000/life/2020/11/01/01</id><content type="html" xml:base="http://0.0.0.0:4000/life/2020/11/01/01.html">&lt;p&gt;hello2&lt;/p&gt;</content><author><name></name></author><category term="life" /><summary type="html">hello2</summary></entry></feed>
+&lt;h3 id=&quot;附录一-添加mermaid插件&quot;&gt;附录一 添加mermaid插件&lt;/h3&gt;
+
+&lt;p&gt;在markdown中通过添加标签mermaid以引入代码块，但是在jekyll中没有对应的标签，需要采用另外方式。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;在md文件末尾添加一下内容&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mermaid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;startOnLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;在对应代码块中添加对应内容包起来&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;mermaid&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ljh.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;script src=&quot;https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;mermaid.initialize({startOnLoad:true});&lt;/script&gt;</content><author><name>ljhone</name><email>ljhone@126.com</email></author><category term="work" /><summary type="html">主题流程摘要 graph TD; A[下载主题]--&amp;gt;B[镜像配置]; B[镜像配置]--&amp;gt;C[启动服务];</summary></entry><entry><title type="html">更新数据</title><link href="http://0.0.0.0:4000/life/2020/11/01/01.html" rel="alternate" type="text/html" title="更新数据" /><published>2020-11-01T00:00:00-05:00</published><updated>2020-11-01T00:00:00-05:00</updated><id>http://0.0.0.0:4000/life/2020/11/01/01</id><content type="html" xml:base="http://0.0.0.0:4000/life/2020/11/01/01.html">&lt;p&gt;hello2&lt;/p&gt;</content><author><name>ljhone</name><email>ljhone@126.com</email></author><category term="life" /><summary type="html">hello2</summary></entry></feed>
