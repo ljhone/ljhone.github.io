@@ -71,4 +71,8 @@ get 返回内部对象(指针), 由于已经重载了()方法, 因此和直接�
 
 ![img](/assets/webrtc_connection.png)
 
-### 6   
+### 6   STUN与TURN的区别
+
+STUN ( Simple Traversal of UDP Through NATs ) 使用`UDP`进行`NATs`穿透。  
+
+TRUN ( Traversal Using Relays around NAT:Relay Extensions to Session Traversal Utilities for NAT ) 则是`STUN`的增强版，在无法使用`STUN`进行穿透时，通过中继的方式实现`P2P`互通。

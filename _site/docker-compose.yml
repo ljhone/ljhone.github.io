@@ -3,9 +3,11 @@ jekyll:
   container_name: jekyll
   stdin_open: true
   entrypoint: ["sh"]
-  
+  environment:
+    - PUID=21378
+    - PGID=21378
   ports:
-    - 8080:4000
-    - 8443:35729
+    - 8091:4000
+    - 35729:35729
   volumes:
     - ./:/srv/jekyll

@@ -2,10 +2,12 @@ jekyll:
   image: jekyll/jekyll:4.0
   container_name: jekyll
   stdin_open: true
-  entrypoint: ["jekyll serve"]
-  
+  entrypoint: ["sh"]
+  environment:
+    - PUID=21378
+    - PGID=21378
   ports:
-    - 4000:4000
+    - 8091:4000
     - 35729:35729
   volumes:
     - ./:/srv/jekyll
